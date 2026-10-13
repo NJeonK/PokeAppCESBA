@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DC0A2D">
+
+    <!-- Header with Lens & LEDs -->
+    <RelativeLayout
+        android:id="@+id/layoutPokedexHeader"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp">
+
+        <ImageView
+            android:id="@+id/btnBackWho"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_pokemon_console_circle"
+            android:clickable="true"
+            android:contentDescription="Atrás"
+            android:elevation="4dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/white" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLensOuter"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/btnBackWho"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="23dp"
+            app:cardElevation="6dp"
+            app:strokeColor="#111111"
+            app:strokeWidth="2dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#21D4FD"
+                app:cardCornerRadius="19dp">
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_lens_reflection" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/layoutLeds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/cardLensOuter"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/cardLensOuter"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="#FF3B30"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="#FFCC00"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                app:cardBackgroundColor="#34C759"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_pokedex_header_slanted"
+            android:paddingStart="40dp"
+            android:paddingTop="2dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Trivia Silueta"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Stepped Bevel Line -->
+    <View
+        android:id="@+id/lineBevel"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@id/layoutPokedexHeader"
+        android:background="#8B0000" />
+
+    <!-- Bottom Controls Area -->
+    <RelativeLayout
+        android:id="@+id/layoutBottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="6dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnDecoCircle"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="#2C2C2E"
+            app:cardCornerRadius="19dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#111111"
+            app:strokeWidth="1.5dp">
+
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="Pokeball"
+                android:src="@drawable/ic_pokeball" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/layoutDpad"
+            android:layout_toEndOf="@id/btnDecoCircle"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="5dp"
+                android:layout_marginBottom="4dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="#2196F3" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
+                    android:background="#FFC107" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#4CAF50" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="120dp"
+                android:layout_height="14dp"
+                app:cardBackgroundColor="#222222"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#111111"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutDpad"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <View
+                android:layout_width="38dp"
+                android:layout_height="12dp"
+                android:layout_centerInParent="true"
+                android:background="#222222" />
+
+            <View
+                android:layout_width="12dp"
+                android:layout_height="38dp"
+                android:layout_centerInParent="true"
+                android:background="#222222" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Main Content Framed Inside Gray Outer Bezel & Inner CRT Screen -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layoutBottomControls"
+        android:layout_below="@id/lineBevel"
+        android:clipToPadding="false"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="6dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#E8ECEF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:strokeColor="#1A2536"
+            app:strokeWidth="2.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/bg_dot_red" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/bg_dot_red" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#DFE6ED"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#B0BEC5"
+                    app:strokeWidth="1.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <!-- Score & Record Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            app:cardBackgroundColor="#FFFFFF"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="2dp"
+                            app:strokeColor="#A1CFC9"
+                            app:strokeWidth="1dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:id="@+id/txtWhoScore"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Puntos: 0"
+                                    android:textColor="#DC0A2D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtWhoRecord"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Récord: 0"
+                                    android:textColor="#333333"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Silhouette Container -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="180dp"
+                            android:layout_height="180dp"
+                            app:cardBackgroundColor="#E0F2F1"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="4dp"
+                            app:strokeColor="#00897B"
+                            app:strokeWidth="2dp">
+
+                            <ImageView
+                                android:id="@+id/imgWhoPokemon"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="Silueta Pokemon" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Attempt & Points Indicator Badge -->
+                        <TextView
+                            android:id="@+id/txtAttemptBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="6dp"
+                            android:background="@drawable/bg_card_rounded"
+                            android:backgroundTint="#FFF8E1"
+                            android:paddingStart="12dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="4dp"
+                            android:text="Intento 1 de 3 (100 Pts)"
+                            android:textColor="#E65100"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- Hint Result Text -->
+                        <TextView
+                            android:id="@+id/txtWhoHintResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#1B5E20"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <!-- 4 Options Grid (2x2) -->
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alignmentMode="alignMargins"
+                            android:columnCount="2"
+                            android:rowCount="2">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnOpt1"
+                                android:layout_width="0dp"
+                                android:layout_height="52dp"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/btn_pokemon_console_light"
+                                app:backgroundTint="@null"
+                                android:text="Opción 1"
+                                android:textColor="#000000"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnOpt2"
+                                android:layout_width="0dp"
+                                android:layout_height="52dp"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/btn_pokemon_console_light"
+                                app:backgroundTint="@null"
+                                android:text="Opción 2"
+                                android:textColor="#000000"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnOpt3"
+                                android:layout_width="0dp"
+                                android:layout_height="52dp"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/btn_pokemon_console_light"
+                                app:backgroundTint="@null"
+                                android:text="Opción 3"
+                                android:textColor="#000000"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnOpt4"
+                                android:layout_width="0dp"
+                                android:layout_height="52dp"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:layout_margin="4dp"
+                                android:background="@drawable/btn_pokemon_console_light"
+                                app:backgroundTint="@null"
+                                android:text="Opción 4"
+                                android:textColor="#000000"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </GridLayout>
+
+                        <!-- Hint Buttons Bar -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnHintType"
+                                android:layout_width="0dp"
+                                android:layout_height="46dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/btn_pokemon_console_teal"
+                                app:backgroundTint="@null"
+                                android:text="Pista Tipo"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnHintStat"
+                                android:layout_width="0dp"
+                                android:layout_height="46dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:background="@drawable/btn_pokemon_console_teal"
+                                app:backgroundTint="@null"
+                                android:text="Pista HP"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnHintCry"
+                                android:layout_width="0dp"
+                                android:layout_height="46dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/btn_pokemon_console_teal"
+                                app:backgroundTint="@null"
+                                android:text="Grito"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+</RelativeLayout>

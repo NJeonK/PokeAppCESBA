@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed state -->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="#4A0000" />
+                </shape>
+            </item>
+            <item android:top="4dp" android:left="2dp" android:right="2dp" android:bottom="1dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="9dp" />
+                    <solid android:color="#900C1E" />
+                    <stroke android:width="2dp" android:color="#200000" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <!-- Normal default state: Raised 3D console button -->
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="#200000" />
+                </shape>
+            </item>
+            <item android:top="0dp" android:left="0dp" android:right="0dp" android:bottom="0dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="#5A0000" />
+                </shape>
+            </item>
+            <item android:top="1dp" android:left="1dp" android:right="1dp" android:bottom="5dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="9dp" />
+                    <gradient
+                        android:angle="270"
+                        android:startColor="#FF2E4D"
+                        android:endColor="#DC0A2D" />
+                    <stroke android:width="2dp" android:color="#7A0000" />
+                </shape>
+            </item>
+            <item android:top="3dp" android:left="5dp" android:right="5dp" android:height="2dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="2dp" />
+                    <solid android:color="#80FFFFFF" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

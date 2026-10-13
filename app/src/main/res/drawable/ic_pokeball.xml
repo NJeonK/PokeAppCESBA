@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Outer Circle Base -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M 50,2 A 48,48 0 0,1 98,50 L 2,50 A 48,48 0 0,1 50,2 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 2,50 L 98,50 A 48,48 0 0,1 50,98 A 48,48 0 0,1 2,50 Z" />
+    <path
+        android:fillColor="#0D1B2A"
+        android:pathData="M 2,46 H 98 V 54 H 2 Z" />
+    <!-- Center Button Outer -->
+    <path
+        android:fillColor="#0D1B2A"
+        android:pathData="M 50,50 m -16,0 a 16,16 0 1,0 32,0 a 16,16 0 1,0 -32,0" />
+    <!-- Center Button Inner -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 50,50 m -9,0 a 9,9 0 1,0 18,0 a 9,9 0 1,0 -18,0" />
+</vector>

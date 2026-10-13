@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="poke_primary_dark">#0A1322</color>
+    <color name="poke_bg_dark_blue">#0C1829</color>
+    <color name="poke_blue_btn">#1D61E7</color>
+    <color name="poke_text_title">#111111</color>
+    <color name="poke_text_sub">#555555</color>
+    <color name="poke_yellow">#FFCB05</color>
+
+    <!-- Pokedex Colors -->
+    <color name="pokedex_red">#DC0A2D</color>
+    <color name="pokedex_dark_red">#8B0000</color>
+    <color name="pokedex_screen_bg">#98CB98</color>
+    <color name="pokedex_screen_border">#DEDEDE</color>
+    <color name="pokedex_lens_blue">#28AAFD</color>
+    <color name="pokedex_lens_light">#8CE6FF</color>
+    <color name="pokedex_led_red">#FF0000</color>
+    <color name="pokedex_led_yellow">#FFD700</color>
+    <color name="pokedex_led_green">#00FF00</color>
+    <color name="pokedex_dark_gray">#222222</color>
+</resources>

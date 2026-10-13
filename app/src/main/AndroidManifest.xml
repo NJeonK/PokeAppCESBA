@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="PokéApp V2"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:enableOnBackInvokedCallback="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PokeAppCESBA">
+
+        <!-- Splash Screen (Launcher) -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.PokeAppCESBA">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login / Registro -->
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Menú Principal -->
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+
+        <!-- Pokédex / Detalle -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Perfil -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+
+        <!-- Favoritos -->
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false" />
+
+        <!-- Simulador de Batalla -->
+        <activity
+            android:name=".BattleSetupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BattleActivity"
+            android:exported="false" />
+
+        <!-- Versus 3v3 -->
+        <activity
+            android:name=".VersusSetupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VersusActivity"
+            android:exported="false" />
+
+        <!-- Historial -->
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+
+        <!-- Torre Pokémon -->
+        <activity
+            android:name=".TowerSetupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TowerActivity"
+            android:exported="false" />
+
+        <!-- Medallas -->
+        <activity
+            android:name=".MedalsActivity"
+            android:exported="false" />
+
+        <!-- Minijuegos E y F -->
+        <activity
+            android:name=".WhoPokemonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SafariActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

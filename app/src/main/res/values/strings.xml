@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokeAppCESBA</string>
+    <!-- Sustituye el id del cliente con tu 'Web client ID' de Google Cloud / Firebase -->
+    <string name="default_web_client_id">YOUR_CLIENT_ID_HERE</string>
+</resources>

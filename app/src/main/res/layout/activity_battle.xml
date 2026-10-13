@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D1F8CD"> <!-- Retro GB background color -->
+
+    <!-- Battle Area -->
+    <RelativeLayout
+        android:id="@+id/layoutBattleArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutBottomConsole"
+        android:background="@drawable/fondo_batalla">
+
+        <!-- Enemy Sprite -->
+        <ImageView
+            android:id="@+id/imgEnemy"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="215dp"
+            android:layout_marginEnd="75dp"
+            android:contentDescription="@string/app_name"/>
+
+        <!-- Enemy Stats Box -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtEnemyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rival"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/txtEnemyStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PSN"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:background="#A040A0"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP "
+                        android:textStyle="bold"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbEnemyHp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressTint="#4CAF50"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtEnemyHpNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100/100"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/txtEnemyStatMods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#2E7D32"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Player Sprite -->
+        <ImageView
+            android:id="@+id/imgPlayer"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="105dp"
+            android:layout_marginBottom="155dp"
+            android:contentDescription="@string/app_name"/>
+
+        <!-- Player Stats Box -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="85dp"
+            android:layout_marginEnd="12dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPlayerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tu Pokemon"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/txtPlayerStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PSN"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:background="#A040A0"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP "
+                        android:textStyle="bold"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbPlayerHp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressTint="#4CAF50"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPlayerHpNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100/100"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/txtPlayerStatMods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#2E7D32"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- Bottom Console and Controls -->
+    <LinearLayout
+        android:id="@+id/layoutBottomConsole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/black"
+        android:padding="8dp">
+
+        <!-- Real-time Text Console -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_card_rounded"
+            android:backgroundTint="#F8F8F8"
+            android:padding="14dp">
+
+            <TextView
+                android:id="@+id/txtBattleLog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Iniciando simulación automática de batalla..."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="3dp" />
+        </FrameLayout>
+
+        <!-- Status / Speed Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTogglePause"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="58dp"
+                android:background="@drawable/btn_pokemon_console_teal"
+                app:backgroundTint="@null"
+                android:text="PAUSAR SIMULACIÓN"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSpeedUp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_pokemon_console_blue"
+                app:backgroundTint="@null"
+                android:text="MODO RÁPIDO (1X)"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Loading overlay -->
+    <RelativeLayout
+        android:id="@+id/layoutBattleLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/poke_yellow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pbLoading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Preparando combate..."
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A4E2C6">
+
+    <!-- Top Teacher / Level Bar -->
+    <LinearLayout
+        android:id="@+id/layoutTowerTop"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/poke_primary_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/imgTeacherPhoto"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_teacher_1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTowerLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIVEL 1 DE 6"
+                android:textColor="@color/poke_yellow"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Docente CESBA 1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Battle Area -->
+    <RelativeLayout
+        android:id="@+id/layoutTowerArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTowerTop"
+        android:layout_above="@+id/layoutBottomConsoleTower"
+        android:background="@drawable/fondo_batalla">
+
+        <!-- Enemy Sprite -->
+        <ImageView
+            android:id="@+id/imgEnemyTower"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="215dp"
+            android:layout_marginEnd="75dp"
+            android:contentDescription="Rival Torre"/>
+
+        <!-- Enemy Stats Box -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtEnemyNameTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rival"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/txtEnemyStatusTower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PSN"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:background="#A040A0"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP "
+                        android:textStyle="bold"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbEnemyHpTower"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressTint="#4CAF50"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtEnemyHpNumbersTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100/100"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/txtEnemyStatModsTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#2E7D32"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Player Sprite -->
+        <ImageView
+            android:id="@+id/imgPlayerTower"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="105dp"
+            android:layout_marginBottom="155dp"
+            android:contentDescription="Jugador"/>
+
+        <!-- Player Stats Box -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="85dp"
+            android:layout_marginEnd="12dp"
+            app:cardBackgroundColor="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtPlayerNameTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tu Pokemon"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/txtPlayerStatusTower"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PSN"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:background="#A040A0"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP "
+                        android:textStyle="bold"
+                        android:textColor="#FF9800"
+                        android:textSize="12sp"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbPlayerHpTower"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressTint="#4CAF50"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtPlayerHpNumbersTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="100/100"
+                    android:gravity="end"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+
+                <TextView
+                    android:id="@+id/txtPlayerStatModsTower"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#2E7D32"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- Bottom Console and Controls -->
+    <LinearLayout
+        android:id="@+id/layoutBottomConsoleTower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@color/black">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_card_rounded"
+            android:backgroundTint="#F8F8F8"
+            android:layout_margin="8dp"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txtBattleLogTower"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="¡Asciendes al Nivel 1 de la Torre!"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+        </FrameLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:padding="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAtkTower1"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_pokemon_console_blue"
+                app:backgroundTint="@null"
+                android:text="-"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAtkTower2"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_pokemon_console_blue"
+                app:backgroundTint="@null"
+                android:text="-"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAtkTower3"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_pokemon_console_blue"
+                app:backgroundTint="@null"
+                android:text="-"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAtkTower4"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/btn_pokemon_console_blue"
+                app:backgroundTint="@null"
+                android:text="-"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- Loading overlay -->
+    <RelativeLayout
+        android:id="@+id/layoutTowerLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/pbTowerLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/poke_yellow"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pbTowerLoading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Preparando combate en la Torre..."
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</RelativeLayout>
